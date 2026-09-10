@@ -13,11 +13,7 @@ Extension QBits extend or enhance how QQQ operates at the infrastructure/framewo
 
 ## Quick Start
 
-1. Click "Use this template" to create your QBit
-2. Run `scripts/customize_template.py` to rename the example
-3. Implement your extension logic
-4. Add tests
-5. Publish to Maven repository
+Requires **Java 21**, **Maven 3.8+**, and QQQ **4.0.0**. Create your repository, customize its Maven coordinates and Java package/classes, implement the table customizer, then run `mvn clean verify`. See [Getting Started](docs/00-getting-started.md).
 
 ## Structure
 
@@ -25,10 +21,8 @@ Extension QBits extend or enhance how QQQ operates at the infrastructure/framewo
 src/main/java/com/kingsrook/qbits/example/
 ├── ExampleExtensionQBitConfig.java    # Configuration
 ├── ExampleExtensionQBitProducer.java  # Entry point
-├── customizers/
-│   └── ExampleTableCustomizer.java    # Table customization
-└── actions/
-    └── ExampleActionCustomizer.java   # Action handling
+└── customizers/
+    └── ExampleTableCustomizer.java    # Table customization
 ```
 
 ## Key Characteristics
@@ -45,4 +39,4 @@ src/main/java/com/kingsrook/qbits/example/
 
 ## License
 
-AGPL-3.0 - See [LICENSE](LICENSE)
+See [LICENSE](LICENSE) and [NOTICE](NOTICE).
