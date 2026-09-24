@@ -2,6 +2,10 @@
 
 GitHub template repository for scaffolding QQQ "Extension QBits" (infrastructure-level plugins: table customizers, auth, audit, action wrappers). Not a shipping library — consumers click "Use this template" and rename the `com.kingsrook.qbits.example` package.
 
+## QQQ 4.0 baseline — 2026-09-24
+
+The historical review below predates the 4.0 migration. This template targets Java 21 and the public QQQ 4.0.0 release from Maven Central. The corrected APIs, license references and actual template commands are in README.md and docs/00-getting-started.md. Preserve the documented multi-instance and scaffold limitations.
+
 ## Knowledge base
 
 Reviewed dossiers for this repo and the wider QQQ platform live in the second-brain vault:
