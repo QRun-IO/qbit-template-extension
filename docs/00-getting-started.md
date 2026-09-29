@@ -1,42 +1,28 @@
 # Getting Started
 
-## Prerequisites
+Targets Java 21, Maven 3.8 or later, and QQQ 4.0.0. Maven resolves the framework dependencies from Maven Central.
 
-- Java 17+
-- Maven 3.8+
-- QQQ 0.23.0+
+1. Choose **Use this template** on GitHub, then clone the repository you created.
+2. In `pom.xml`, set your own `groupId`, `artifactId`, name, description, and version.
+3. Use your IDE's package refactoring to rename `com.kingsrook.qbits.example` throughout `src/`. Rename the `Example*` classes and update their imports and references with the IDE's rename refactoring.
+4. Update the QBit producer's `GROUP_ID`, `ARTIFACT_ID`, and `VERSION` constants to match your project. Give the metadata names their own stable names before combining the QBit with other examples.
+5. Build the generated project:
 
-## Creating Your Extension QBit
-
-1. Click "Use this template" on GitHub
-2. Clone your new repository
-3. Run the customization script:
-   ```bash
-   python scripts/customize_template.py
-   ```
-4. Enter your QBit name when prompted
-
-## Project Structure
-
-```
-src/main/java/com/kingsrook/qbits/yourextension/
-├── YourExtensionQBitConfig.java
-├── YourExtensionQBitProducer.java
-├── customizers/
-└── actions/
+```bash
+mvn clean verify
 ```
 
-## Using Your QBit
+The repository provides example Java sources; customization uses normal package/class refactoring. Keep example coordinates unpublished. After customizing, add tests for your QBit's behavior before setting up its publishing workflow.
+
+## Register with a host application
+
+The following uses the original example names; substitute the names chosen above:
 
 ```java
-new YourExtensionQBitProducer()
-   .withConfig(new YourExtensionQBitConfig()
+new ExampleExtensionQBitProducer()
+   .withConfig(new ExampleExtensionQBitConfig()
       .withTargetTableName("order"))
-   .produce(qInstance, "myExtension");
+   .produce(qInstance, "my-extension");
 ```
 
-## Next Steps
-
-- Read [Extension Patterns](01-extension-patterns.md)
-- Implement your customization logic
-- Add tests
+Register the target table before producing the extension, then implement its customizer. See [Extension Patterns](01-extension-patterns.md).
